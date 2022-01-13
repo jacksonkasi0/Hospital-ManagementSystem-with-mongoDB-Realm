@@ -18,7 +18,7 @@ app.use(express.static("./"));
 
 app.use(
   session({
-    secret: process.env.SECRET_KEY,
+    secret: "#%^67V000y(>J@q73!u",
     resave: false,
     saveUninitialized: false,
   })
@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // connectDB();
-mongoose.connect(process.env.DB_URL);
+mongoose.connect(process.env.MONGODB_URL);
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
