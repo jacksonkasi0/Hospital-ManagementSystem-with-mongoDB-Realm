@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("passport");
-const connectDB = require("./config/db");
+// const connectDB = require("./config/db");
 const User = require("./models/doctor/user");
 const router = require("./routes");
 const mongoose = require("mongoose");
@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // connectDB();
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect("mongodb+srv://jacksonkasi:1855@jacksonkasi.fwlzq.mongodb.net/Hospital-Management-System?retryWrites=true&w=majority");
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
