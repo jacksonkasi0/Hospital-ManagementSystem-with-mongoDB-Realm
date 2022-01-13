@@ -1,6 +1,5 @@
 let mongoose = require("mongoose");
 const router = require("express").Router();
-const Chart = require('chart.js');
 
 router.get("/", (req, res) => {
   res.render("index");
