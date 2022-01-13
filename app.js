@@ -5,6 +5,8 @@ const passport = require("passport");
 const connectDB = require("./config/db");
 const User = require("./models/doctor/user");
 const router = require("./routes");
+const mongoose = require("mongoose");
+
 
 require("dotenv").config();
 const app = express();
