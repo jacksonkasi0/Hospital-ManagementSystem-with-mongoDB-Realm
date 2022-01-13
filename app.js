@@ -25,6 +25,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+connectDB();
+
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
