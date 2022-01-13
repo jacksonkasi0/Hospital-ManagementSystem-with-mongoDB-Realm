@@ -25,7 +25,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-connectDB();
+// connectDB();
+mongoose.connect(process.env.DB_URL);
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
