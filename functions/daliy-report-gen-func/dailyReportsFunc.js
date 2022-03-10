@@ -35,9 +35,11 @@ exports = function () {
   }
 
   reportData()
-    .then((dailyReport) => {
-      console.log(dailyReport);
+    .then((dailyReport) => {   
+
+      console.log(dailyReport._id);
       reports.insertMany([dailyReport]);
+
     })
     .catch((err) => console.error("Sorry, Failed to generate report:", err));
 };
@@ -55,7 +57,7 @@ function makeYesterdayMorningDate() {
 }
 
 function setTimeToMorning(date) {
-  date.setHours(7);
+  date.setHours(1);
   date.setMinutes(0);
   date.setSeconds(0);
   date.setMilliseconds(0);
